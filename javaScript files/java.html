@@ -1,0 +1,30 @@
+3 function, with 3 parameters .1st is called by 2nd, 2nd is called by 3rd. and finally 3 rd is displayed with full word.
+<!DOCTYPE html>
+<html>
+<body>
+<p id="test"></p>
+
+<script>
+        function hello(string) {
+         let  x="hello";
+            return (x);
+        }
+        function welcome(string) {
+         let  y="welcome to";
+           
+           return(hello()+" "+y)
+        }
+        function mashup(string)  {
+         let  z="mashup";
+            
+            return (welcome()+" "+z);
+        }
+        document.getElementById("test").innerHTML=mashup();
+        
+        //document.write(mashup());    IT DELETES ALL OTHER THING AND LOADS ONLY THIS.
+        //window.alert(mashup());     [ALERT-BOX]
+        //console.log()                IN CONSOLE
+</script>
+
+</body>
+</html>
