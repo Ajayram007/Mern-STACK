@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=10">
+	<title>screen</title>
+	<style type="text/css">
+		body{
+			height: 100%;
+			width: 100%;
+		}
+	
+   .form{
+			background:linear-gradient(to top left,#e6dada,#274046);
+			margin: -5%;padding-right: 10%;
+			padding-bottom: 5%;
+		}
+		.details{
+			box-sizing: border-box;
+			width: 65%;
+			height: 5%;
+			margin: 2%;
+
+
+		}
+		@media only screen and (max-width:500px)
+		{
+			div{
+				display: none;
+
+			}
+			form{
+				margin: 0% -40% 
+       
+			}
+			h1{
+				width: 100%;
+			}
+      .details{
+      	width: 100%;
+      }
+
+		}
+
+	</style>
+</head>
+
+<body>
+	
+	<div class="form" style="position:fixed; height: 100%;width: 50%; "></div>
+		<form action="y.html" method="post" enctype="" style="position:fixed; height: 100%;width: 50%;left: 50%;display: inline-block;align-content:center;font-family: sans-serif;">
+	<h1 style="color: orangered;margin-left:30%;">Login Form</h1>
+
+	
+		<label for="email" style="margin-left:30% ; "><b>Email:</b> </label>
+		<br>
+		<input type="email" name="email" class="details" style="margin-left:30%;" required >
+		<br>
+		<label for="password"style="margin-left:30%;"  ><b>Password:</b> </label>
+		<br>
+		<input type="password" name="password" class="details" style="margin-left:30%;" required>
+		<br>
+		
+		<input type="checkbox" name="checkbox" class="Remember" value=""style="margin-left:30%;">
+		<label for="Remember Me"  id="me" style="" ><b>Remember Me</b> </label>
+		<br>
+		
+		<button for="Login" class="details" style="background-color: orangered; color: white;border-color: orangered;margin-left:30%;"  ><b>Login</b></button>
+    
+
+	</form>
+
+
+
+</body>
+</html>
+		
