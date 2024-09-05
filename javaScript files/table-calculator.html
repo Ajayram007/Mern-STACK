@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button to Input Example</title>
+    <style type="text/css">
+    	.valueButton{
+    		height: 30px;
+    		width: 30px;
+    	}
+    </style>
+</head>
+<body>
+	<table style="width:110px;height: 100px;">
+		<tr>
+			<td>
+    <input type="text" id="myinput" placeholder="enter the number" style="width:90px">
+            </td>
+        </tr>
+        <tr>
+        	<td>
+    <button class="valueButton" value="1" onclick="valuedisplayed('1')">1</button>
+    <button class="valueButton" value="2"onclick="valuedisplayed('2')">2</button>
+    <button class="valueButton" value="3"onclick="valuedisplayed('3')">3</button>
+    
+            </td>
+        </tr>
+        <tr>
+        	<td>
+    <button class="valueButton" value="4"onclick="valuedisplayed('4')">4</button>
+    <button class="valueButton" value="5"onclick="valuedisplayed('5')">5</button>
+    <button class="valueButton" value="6"onclick="valuedisplayed('6')">6</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+    <button class="valueButton" value="7"onclick="valuedisplayed('7')">7</button>
+    <button class="valueButton" value="8"onclick="valuedisplayed('8')">8</button>
+    <button class="valueButton" value="9"onclick="valuedisplayed('9')">9</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+    <button class="valueButton" value="*"onclick="valuedisplayed('*')">*</button>    
+    <button class="valueButton" value="0"onclick="valuedisplayed('0')">0</button>
+    <button class="valueButton" value="/"onclick="valuedisplayed('/')">/</button>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+    <button class="valueButton" value="back"onclick="backspace()"><-</button>  
+    <button class="valueButton" value="="onclick="result()">=</button>
+    <button class="valueButton" value="clear"onclick="clearspace()">clear</button>
+            </td>
+        </tr>
+        <tr>
+        	<td >
+                <button class="valueButton" value="+"onclick="valuedisplayed('+')">+</button>
+        	    <button class="valueButton" value="."onclick="valuedisplayed('.')" >.</button>
+        	    <button class="valueButton" value="-"onclick="valuedisplayed('-')" >-</button>	
+        	</td>
+        </tr>
+         
+    </table>
+    <script >
+    	function valuedisplayed(num) 
+    	{
+    		document.getElementById('myinput').value+=num;
+    	}
+        
+        function result()
+        {
+        	let textbox=document.getElementById('myinput').value;
+        	let result=eval(textbox);
+        	document.getElementById('myinput').value=result;
+  
+        }
+        function backspace()
+        {
+        	let backspace=document.getElementById('myinput').value.slice(0,-1);
+        	document.getElementById('myinput').value=backspace;
+        }
+        function clearspace()
+        {
+        	document.getElementById('myinput').value=""
+        }
+    </script>
+</body>
+</html>
