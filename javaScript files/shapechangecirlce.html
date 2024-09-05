@@ -1,0 +1,46 @@
+<!--shapechanger to circle and triangle with a button-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>div colour</title>
+    <style type="text/css">
+        #shape {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%; /* Circle shape */
+    
+}
+
+
+    </style>
+</head>
+<body>
+   <div id="shape"></div>
+   <button style="" onclick="changeShape()">Change Shape</button>  
+   <script type="text/javascript">
+   
+     function changeShape() {
+    const shape = document.getElementById('shape');
+    shape.style.width = '0';
+    shape.style.height = '0';
+    shape.style.borderLeft = '50px solid transparent';
+    shape.style.borderRight = '50px solid transparent';
+    shape.style.borderBottom = '100px solid red';
+    shape.style.borderRadius = '0'; // Removes the circle shape
+    shape.style.backgroundColor = 'white';
+    shape.classList.toggle("shape");
+  } 
+    
+
+   </script>
+</body>
+</html>
+ <!--function changeShape() {
+    const shape = document.getElementById("shape");
+    shape.classList.toggle("triangle");
+    
+}-->

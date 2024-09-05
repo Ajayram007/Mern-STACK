@@ -1,0 +1,55 @@
+<!--shapechanger to circle and triangle with a button-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>div colour</title>
+    <style>
+  #shape {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%; /* Makes it a circle */
+    transition: all 0.5s fade; /* Smooth transition */
+  }
+</style>
+
+</head>
+<body>
+   <div id="shape"></div>
+<button onclick="Shape()">Toggle Shape</button>
+ 
+   <script>
+  let isCircle = true;
+
+  function Shape() {
+    const shape = document.getElementById('shape');
+    if (isCircle) {
+      shape.style.width = '0';
+      shape.style.height = '0';
+      shape.style.borderLeft = '50px solid white';
+      shape.style.borderRight = '50px solid white';
+      shape.style.borderBottom = '100px solid red';
+      shape.style.borderRadius = '0'; // Removes the circle shape
+    } else {
+      shape.style.width = '100px';
+      shape.style.height = '100px';
+      shape.style.backgroundColor = 'blue';
+      shape.style.borderRadius = '50%'; // Makes it a circle
+      shape.style.borderLeft = '0';
+      shape.style.borderRight = '0';
+      shape.style.borderBottom = '0';
+    }
+    isCircle = !isCircle; // Toggle the shape state
+  }
+</script>
+
+</body>
+</html>
+ <!--function changeShape() {
+    const shape = document.getElementById("shape");
+    shape.classList.toggle("triangle");
+    
+}-->
