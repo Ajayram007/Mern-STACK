@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game</title>
+	<style type="text/css">
+		button{
+			width: 100px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+     
+      <h1>PICK a CONDITION!!!</h1>
+      <button  onclick="buttonlink('stone')">Stone</button>
+      <button  onclick="buttonlink('paper')">Paper</button>
+      <button  onclick="buttonlink('pencil')">Pencil</button>
+      <button  onclick="buttonlink('scissor')">Scissor</button>
+      
+      <div id="e"></div>
+      <div id="d" style="width: 100px;height: 30px;"></div>
+      <div id="f" style="width: 100px;height: 30px;">
+     	
+     </div>
+
+     <div id="selection"></div>
+     <script type="text/javascript">
+     	
+     	
+      let system=0;
+      let user=0;
+      let x;
+    function buttonlink(userChoice) {
+        	      	 x=Math.random();
+     if (x <= 0.25)
+      {
+     	      let y="Stone";
+     		document.getElementById("e").innerHTML =y ;
+            if (userChoice=='scissor')
+             {
+                  system+=1;
+                  document.getElementById("f").innerHTML="system wins"+system;
+                  win();
+                                        }
+            else if (userChoice=='pencil') 
+             {
+                  system+=1;
+                  document.getElementById("f").innerHTML="system wins"+system;
+                  win();
+     		     	                       } 
+            else if (userChoice=='paper')
+             {
+                user+=1;
+                 document.getElementById("d").innerHTML="user wins"+user; 
+                 win();  
+                                           }      
+      }
+
+     	     else if (x <= 0.5) 
+     {
+     		document.getElementById("e").innerHTML = "Paper";
+            if (userChoice=='scissor') {
+                  user+=1;
+                  document.getElementById("d").innerHTML="user wins"+user;
+                  win();
+                  }
+            else if (userChoice=='pencil') {
+                  user+=1;
+                  document.getElementById("d").innerHTML="user wins"+user;
+                  win();
+                  } 
+            else if (userChoice=='stone'){
+                system+=1;
+                 document.getElementById("f").innerHTML="system wins"+system;
+                 win();   
+                 }
+                 	} 
+               	
+     else if (x <= 0.75) 
+     {
+     	
+     		document.getElementById("e").innerHTML = "Pencil";
+            if (userChoice=='stone') {
+                  user+=1;
+                  document.getElementById("d").innerHTML=("user wins"+user);
+                  win();
+                  }
+            else if (userChoice=='paper') {
+                  system+=1;
+                  document.getElementById("f").innerHTML=("system wins"+system);
+                  win();
+                  } 
+            else if (userChoice=='paper'){
+                system+=1;
+                 document.getElementById("f").innerHTML=("system wins"+system); 
+                 win();  
+                 }
+     		     	} 
+    	     	
+     else 
+     {
+     	
+     		document.getElementById("e").innerHTML = "Scissor";
+            if (userChoice=='stone') {
+                  user+=1;
+                  document.getElementById("d").innerHTML=("user wins"+user);
+                  win();
+                  }
+            else if (userChoice=='paper') {
+                  system+=1;
+                  document.getElementById("f").innerHTML=("system wins"+system);
+                  win();
+                  } 
+            else if (userChoice=='pencil'){
+                system+=1;
+                 document.getElementById("f").innerHTML=("system wins"+system);
+                 win();   
+                 }
+     	                        
+      }
+      
+        	      }  
+      function win(){
+            if (system==5) {
+            alert("system wins")
+            system=0;
+            user=0;
+            } 
+            else if(user==5) {
+            alert("user wins")
+            system=0;
+            user=0;
+            }
+
+      }	      
+     </script>
+</body>
+</html>
