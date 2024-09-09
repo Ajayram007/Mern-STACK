@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game</title>
+	<style type="text/css">
+		button{
+			width: 100px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+     
+      <h1>PICK a CONDITION!!!</h1>
+      <button id="stone" onclick="buttonlink()">Stone</button>
+      <button id="paper" onclick="buttonlink()">Paper</button>
+      <button id="pencil" onclick="buttonlink()">Pencil</button>
+      <button id="scissor" onclick="buttonlink()">Scissor</button>
+      
+      <div id="d" style="width: 100px;height: 30px;">
+     	
+     </div>
+     <script type="text/javascript">
+     	
+     	
+    function buttonlink() {
+        	      	let x=Math.random();
+     if (x <= 0.3) {
+     	
+     		document.getElementById("d").innerHTML ="Stone" ;
+     		     	} 
+
+     	     else if (x <= 0.5) 
+     {
+        
+     		document.getElementById("d").innerHTML = "Paper";
+                 	} 
+               	
+     else if (x <= 0.7) 
+     {
+     	
+     		document.getElementById("d").innerHTML = "Pencil";
+     		     	} 
+    	     	
+     else 
+     {
+     	
+     		document.getElementById("d").innerHTML = "Scissor";
+     	                        
+      }
+      
+        	      }  	      
+     </script>
+</body>
+</html>
