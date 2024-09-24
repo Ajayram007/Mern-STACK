@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>calculator</title>
+  <style type="text/css">
+    .valueButton{
+      height:30px; 
+      width: 30px;
+      margin-left:30px;
+    }
+    #backspaceButton{
+      height:30px ;
+       width: 90px;
+       margin-left:30px ;
+    }
+    #clearButton{
+      height:30px ; 
+      width: 80px;
+      margin-left:50px;
+
+    }
+    #myInput{
+      width: 98%;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    .calculator{
+      height: 310px;
+      width: 270px;
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator" id ="calculator">
+     <form>
+    <input id="myInput" type="text" name="number">
+     
+     <br>
+     <input type="button"  value="1" class="valueButton"  onclick="getvalue(1)">
+     <input type="button"  value="2" class="valueButton" onclick="getvalue(2)">
+     <input type="button"  value="3" class="valueButton" onclick="getvalue(3)">
+     
+          <select id="selectOperator" onchange="getOperator()" style="margin-left: 30px; padding: 5px;">       
+        <option value="+" class="valueButton">+</option>
+       <option value="-" class="valueButton" >-</option>
+       <option value="*" class="valueButton" >*</option>
+       <option value="/" class="valueButton" >/</option>
+     </select>
+
+     <br>
+     <br>
+     <input type="button"  value="4" class="valueButton" onclick="getvalue(4)" >
+     <input type="button"  value="5" class="valueButton"  onclick="getvalue(5)">
+     <input type="button"  value="6" class="valueButton"  onclick="getvalue(6)">
+     
+
+   
+     <br>
+     <br>
+     <input type="button"  value="7" class="valueButton" onclick="getvalue(7)" >
+     <input type="button"  value="8" class="valueButton" onclick="getvalue(8)" >
+     <input type="button"  value="9" class="valueButton"  onclick="getvalue(9)">
+     
+     <br>
+     <br>
+     
+     <input type="button"  value="." class="valueButton" onclick="getvalue(.)" >
+     
+     <input type="button"  value="0" class="valueButton" onclick="getvalue('0')" >
+
+     <input type="button"  value="=" class="valueButton" onclick="result()">
+
+     <br>
+     <br>
+       <input type="button"  value="back" id="backspaceButton" onclick="backspace()" >
+       <input type="button"  value="clear" id="clearButton" onclick="clearScreen()">
+       </form>
+    </div>
+    <script >
+      
+      function getvalue(num)
+      {
+        document.getElementById('myInput').value+=num;// comment itteykene nink manasilakan vendiye pinne eduth kalanjo//
+
+        //EE function nammude text boxilotu numbers add cheyune aahn 
+      }
+      function clearScreen()
+      {
+        let val="";
+        document.getElementById('myInput').value=val;
+        // Ethil aadyam nammal oru null stringine oru variablil aakiyitu input fieldinte value ath aakum
+
+      }
+      function result()
+      {
+        let text=document.getElementById('myInput').value;
+        let res=eval(text);
+        document.getElementById('myInput').value=res;
+        //EE functionil text boxil ulla valuene oru variablil aaki ennitu athine eval function use cheyth aah string expressione evaluate cheyth result aayitu tharum nammal aa resultine vere oru variablil store aakiyitu athine display cheyipikum
+
+
+      }
+      function backspace(){
+        let sliced=document.getElementById('myInput').value.slice(0,-1);
+        document.getElementById('myInput').value=sliced;
+        //eth ariyalo... :)
+    }
+     function getOperator() {
+      let operator = document.getElementById('selectOperator').value;
+
+      document.getElementById('myInput').value+= operator;
+     }
+ 
+    </script>
+
+
+
+</body>
+</html>
